@@ -10,8 +10,12 @@ function App() {
             <Header />
             <MainContent />
             <Footer />
+            <UserProfile/>
+            <WelcomeMessage />
         </div>
     );
 }
 
 export default App;
+
+
