@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useRecipeStore } from "./recipeStore";
 
-const DeleteRecipeButton = ({ id }) => {
-  const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
-  const navigate = useNavigate();
-
-  const handleDelete = () => {
-    deleteRecipe(id);
-    navigate("/");
-  };
-
+const updateRecipe: (updatedRecipe) =>
+  set((state) => {
+    const updatedRecipes = state.recipes.map((recipe) =>
+      recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+    );
+    return {
+      recipes: updatedRecipes,
+      filteredRecipes: updatedRecipes,
+    };
+  }),
   return (
     <button
       onClick={handleDelete}
