@@ -25,6 +25,21 @@ const isFavorite = favorites.includes(recipe.id);
       <h2>{recipe.title}</h2>
       <p>{recipe.description}</p>
 
+      <button
+  onClick={() =>
+    isFavorite
+      ? removeFavorite(recipe.id)
+      : addFavorite(recipe.id)
+  }
+  style={{
+    marginBottom: "10px",
+    backgroundColor: isFavorite ? "orange" : "green",
+    color: "white",
+  }}
+>
+  {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+</button>
+
       <EditRecipeForm recipe={recipe} />
       <DeleteRecipeButton id={recipe.id} />
     </div>
