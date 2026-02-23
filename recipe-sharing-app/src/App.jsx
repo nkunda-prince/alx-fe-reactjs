@@ -13,13 +13,15 @@ function App() {
         <h1>Recipe Sharing Application</h1>
 
         <Routes>
-        <Route
+       <Route
   path="/"
   element={
     <>
       <AddRecipeForm />
       <SearchBar />
       <RecipeList />
+      <FavoritesList />
+      <RecommendationsList />
     </>
   }
 />
